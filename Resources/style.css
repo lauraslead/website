@@ -4,7 +4,6 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    /* background-color: #FFEFD9; If I want to make the background beige */
   }
 
 h1 {
@@ -370,18 +369,54 @@ header .mobile {
   color: #495D6A;
 }
 
+.service-image1 {
+  grid-area: service-image1;
+}
+.service-image2 {
+  grid-area: service-image2;
+}
+.service-image3 {
+  grid-area: service-image3;
+}
+.service-content1 { 
+  grid-area: service-content1;
+}
+.service-content2 { 
+  grid-area: service-content2;
+}
+.service-content3 { 
+  grid-area: service-content3;
+}
+.service-button1 {
+  grid-area: service-button1;
+}
+.service-button2 {
+  grid-area: service-button2;
+}
+.service-button3 {
+  grid-area: service-button3;
+}
+
 #services-section .services {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-column-gap: 10px;
+  margin: 0px 10px;
+  align-items: start;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "service-image1 service-image2 service-image3"
+  "service-content1 service-content2 service-content3"
+  "service-button1 service-button2 service-button3"
 }
 
 #services-section .service {
-  width: 33.3%;
+  width: auto;
   padding: 0 1%;
   color: #495D6A;
 }
 
-#services-section .button {
+.service-button1, .service-button2, .service-button3 {
+  width: 100%;
   margin: 1.625rem 0rem;
   padding: 1.25rem 0rem;
   border-radius: 4px;
@@ -390,14 +425,20 @@ header .mobile {
   color: #FFEFD9;
 }
 
-.service-image {
+.service-image1, .service-image2, .service-image3 {
   display: block;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-content1, .service-content2, .service-content3 {
+  color: #495D6A;
 }
 
 @media only screen and (max-width: 760px) {
   #services-section {
-    padding: 1.5rem 0 0 0;
+    padding: 1.5rem 0 0.313rem 0;
   }
 
   #services-section .content {
@@ -423,8 +464,8 @@ header .mobile {
   }
 
   #services-section .services {
-    flex-direction: column;
-  }
+    display: block;
+  } 
 
   #services-section .service {
     width: auto;
