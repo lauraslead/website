@@ -61,12 +61,22 @@ header .header-nav {
   margin-left: 150px;
 } */
 
-header .desktop-logo {
-  color: #FFEFD9;
+header .title {
   font-size: 2rem;
   font-family: "Bodoni Moda", serif;
-  padding-left: 1.875rem;
   font-weight: 400;
+}
+
+header .subtitle {
+  line-height: 1.75rem;
+  font-size: 0.75rem;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+}
+
+header .desktop-logo {
+  color: #FFEFD9;
+  margin-left: 1.875rem;
   text-decoration: none;
 }
 
@@ -140,7 +150,7 @@ header .mobile {
 
   header .desktop-logo {
     font-size: 2rem;
-    padding: 0;
+    margin: 0;
   }
 }
 
@@ -162,7 +172,7 @@ header .mobile {
   border: solid .5px #FFEFD9;
   border-radius: 4px;
   background-color: rgba(95, 143, 173,.9);
-  margin-top: 10.625rem;
+  margin-top: 8.75rem;
   margin-left: 6.25rem;
   text-align: center;
 }
@@ -175,7 +185,13 @@ header .mobile {
   color: #FFEFD9;
 }
 
+#meet-and-greet a:hover {
+  background-color: #495D6A;
+  color: #FFEFD9;
+}
+
 #meet-and-greet h1 {
+  margin: 0.25em;
   font-size: 3.125rem;
   font-family: 'Bodoni Moda', serif;
   font-weight: 400;
@@ -193,6 +209,8 @@ header .mobile {
 }
 
 #meet-and-greet .button {
+  text-decoration: none;
+  display: block;
   margin-top: 1.625rem;
   padding: 1.25rem 7.25rem;
 }
@@ -344,6 +362,10 @@ header .mobile {
   margin-bottom: 1rem;
 }
 
+#services-section a:hover {
+  background-color: #5F8FAD;
+}
+
 #services-section .content h2 {
   font-size: 2.25rem;
   font-weight: 400;
@@ -416,6 +438,8 @@ header .mobile {
 }
 
 .service-button1, .service-button2, .service-button3 {
+  text-decoration: none;
+  display: block;
   width: 100%;
   margin: 1.625rem 0rem;
   padding: 1.25rem 0rem;
