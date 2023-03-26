@@ -190,6 +190,10 @@ header .mobile {
   color: #FFEFD9;
 }
 
+/* #meet-and-greet a:active {
+  box-shadow: 2px 2px 5px black;
+} */
+
 #meet-and-greet h1 {
   margin: 0.25em;
   font-size: 3.125rem;
@@ -520,6 +524,8 @@ header .mobile {
 }
 
 #reviews-section .quote {
+  display: block;
+  margin: 0rem 10rem;
   font-family: "Bodoni Moda", serif;
   font-size: 1.125rem;
   font-style: italic;
@@ -537,6 +543,7 @@ header .mobile {
   }
 
   #reviews-section .quote {
+    margin: 0rem 5rem;
     font-size: 1.5rem;
     line-height: 1.4;
   }
