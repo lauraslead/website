@@ -157,7 +157,7 @@ header .mobile {
 /* Hero Banner */
 
 #hero-banner {
-  background-image: url(./Images/laura-benny-sit-2-1200.jpg);
+  background-image: url(./images/laura-benny-sit-2-1200.jpg);
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -221,7 +221,7 @@ header .mobile {
 
 @media only screen and (max-width: 760px) {
   #hero-banner {
-    background-image: url(./Images/laura-benny-sit-2-800.jpg);
+    background-image: url(./images/laura-benny-sit-2-800.jpg);
     align-items: center;
     justify-content: center;
     height: 28rem;
@@ -267,7 +267,7 @@ header .mobile {
 
 @media only screen and (max-width: 450px) {
   #hero-banner {
-    background-image: url(./Images/laura-benny-sit-2-450.jpg);
+    background-image: url(./egg/laura-benny-sit-2-450.jpg);
     /* height: 20rem; */
   }
 
