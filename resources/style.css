@@ -267,7 +267,7 @@ header .mobile {
 
 @media only screen and (max-width: 450px) {
   #hero-banner {
-    background-image: url(./egg/laura-benny-sit-2-450.jpg);
+    background-image: url(./images/laura-benny-sit-2-450.jpg);
     /* height: 20rem; */
   }
 
