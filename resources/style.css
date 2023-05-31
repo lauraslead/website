@@ -515,6 +515,7 @@ header .mobile {
 
 #reviews-section {
   background-color: white;
+  overflow-x: hidden;
 }
 
 #reviews-section .content {
@@ -539,12 +540,69 @@ header .mobile {
   height: 1.875rem;
 }
 
+.review-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 18rem;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: nowrap; /* prevent reviews from wrapping to new line */
+  overflow: hidden; /* hide the reviews that are outside the container */
+  width: 100%;
+}
+
+.review {
+  flex-basis: 100%; 
+  max-width: 100%; 
+  transition: transform 0.3s ease;
+  padding: 5rem 0;
+  color: #495D6A; /* apply the color to .review instead of #reviews-section */
+  text-align: center;
+}
+
+.review h2 {
+  text-align: center;
+}
+
+.review .quote {
+  display: block;
+  margin: 0rem 10rem;
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: #495D6A; /* apply the color to .quote inside .review instead of #reviews-section */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 5px;
+}
+
+.next {
+  right: 5px;
+}
+
+
 @media only screen and (max-width: 760px) {
   #reviews-section .content {
     padding: 1.875rem .625rem;
   }
 
-  #reviews-section .quote {
+  .review .quote {
     margin: 0rem 5rem;
     font-size: 1.5rem;
     line-height: 1.4;
@@ -554,6 +612,25 @@ header .mobile {
     display: block;
     padding-top: 1rem;
     margin: auto;
+  }
+
+  .review-slider {
+    min-height: 26rem;
+  }
+
+  @media only screen and (max-width: 375px) {
+    .review {
+      padding: 2rem 0;
+    }
+  
+    .review h2 {
+      font-size: 1.5rem;
+    }
+  
+    .review .quote {
+      margin: 0 2rem;
+      font-size: 1rem;
+    }
   }
 }
 

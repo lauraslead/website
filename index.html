@@ -126,15 +126,117 @@
       </div>
     </div>
 
-    <!-- Reviews -->
+<!-- Reviews -->
 
-    <div id="reviews-section">
-      <div class="content center">
-        <h2>Alex & Lola</h2>
-        <span class="quote">“I’m so fortunate to have found Laura... she really pays close one on one attention to the training needs of our puppy, Lola, and she’s thriving from it. I totally trust Laura and Lola absolutely loves her... I highly recommend Laura to anyone looking for a trainer & dog walker”</span>
-        <!-- <img class="quote-citation" src="./favicon-blue.ico" /> -->
-      </div>
+<!-- <div id="reviews-section">
+  <div class="content center">
+    <h2>Alex & Lola</h2>
+    <span class="quote">“I’m so fortunate to have found Laura... she really pays close one on one attention to the training needs of our puppy, Lola, and she’s thriving from it. I totally trust Laura and Lola absolutely loves her... I highly recommend Laura to anyone looking for a trainer & dog walker”</span>
+  </div>
+</div> -->
+
+<div class="review-slider">
+  <div class="reviews">
+    <div class="review">
+      <h2>Alex & Lola</h2>
+    <span class="quote">“I’m so fortunate to have found Laura... she really pays close one on one attention to the training needs of our puppy, Lola, and she’s thriving from it. I totally trust Laura and Lola absolutely loves her... I highly recommend Laura to anyone looking for a trainer & dog walker”</span>
     </div>
+    <div class="review">
+      <h2>Natalie & Archer</h2>
+    <span class="quote">“Laurita is the best dog walker you could ask for. She genuinely loves the dogs she looks after and our dog has learned so much from her training. She has helped us with their recall, behaviour with other dogs and walking calmly on the lead! We love her!”</span>
+    </div>
+    <div class="review">
+      <h2>Cristina & Greta</h2>
+    <span class="quote">“We are so happy that we have Laurita to take Greta out as she is so caring with her and also so patient. Our dog loves the time with her and comes back happy and knackered! Which it is rare in a Jack Russel! We highly recommend Laurita as you not only get a dog walker but also someone that really cares about dogs and personalises the time she gives to them.”</span>
+    </div>
+    <div class="review">
+      <h2>Bron & Chewie</h2>
+    <span class="quote">“Laura is excellent. Really professional and very personable. She clearly loves working with dogs and in two walks a week over the past few weeks, I’ve already seen my very reactive Shih Tzu become much more manageable. I even took her to a coffee shop where there were other dogs today and she paid a lot more attention to me, she did really well!”</span>
+    </div>
+  </div>
+  <button class="prev" onclick="changeReview(-1)">&lt;</button>
+  <button class="next" onclick="changeReview(1)">&gt;</button>
+</div>
+
+<script>
+  let currentReviewIndex = 0;
+
+  function changeReview(direction) {
+    const reviews = document.querySelectorAll('.review');
+    const totalReviews = reviews.length;
+
+    currentReviewIndex += direction;
+
+    if (currentReviewIndex < 0) {
+      currentReviewIndex = totalReviews - 1;
+    } else if (currentReviewIndex >= totalReviews) {
+      currentReviewIndex = 0;
+    }
+
+    reviews.forEach((review, index) => {
+      review.style.display = "none"; // hide all reviews initially
+      if (index === currentReviewIndex) {
+        review.style.display = "block"; // show current review
+      }
+    });
+
+    changeButtonColor();
+  }
+
+  // Call function to initialize first review
+  window.onload = function () {
+    changeReview(0);
+  };
+
+  const reviewSlider = document.querySelector('.review-slider');
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  reviewSlider.addEventListener('touchstart', handleTouchStart, false);
+  reviewSlider.addEventListener('touchend', handleTouchEnd, false);
+
+  function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+  }
+
+  function handleTouchEnd(event) {
+    touchEndX = event.changedTouches[0].clientX;
+    handleSwipe();
+  }
+
+  function handleSwipe() {
+    const minSwipeDistance = 50; // minimum distance to trigger a swipe
+
+    if (touchEndX - touchStartX > minSwipeDistance) {
+      // Swipe right
+      changeReview(-1);
+    } else if (touchStartX - touchEndX > minSwipeDistance) {
+      // Swipe left
+      changeReview(1);
+    }
+  }
+
+  function changeButtonColor() {
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const reviews = document.querySelectorAll('.review');
+    const totalReviews = reviews.length;
+
+    const buttonColor = '#495D6A'; // Desired color
+
+    if (totalReviews > 1) {
+      prevButton.style.display = "block";
+      nextButton.style.display = "block";
+    } else {
+      prevButton.style.display = "none";
+      nextButton.style.display = "none";
+    }
+
+    prevButton.style.color = buttonColor;
+    nextButton.style.color = buttonColor;
+  }
+</script>
 
     <!-- Footer -->
 
