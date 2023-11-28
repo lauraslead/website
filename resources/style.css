@@ -650,6 +650,7 @@ footer .content {
   color: #FFEFD9;
   display: flex;
   font-size: .75rem;
+  flex-direction: column; /* Stack elements vertically */
   justify-content: space-between;
   align-items: center; /* Vertically center the content */
 }
@@ -672,13 +673,13 @@ footer .right {
 @media only screen and (min-width: 760px) {
   footer .content {
     font-size: .75rem;
+    flex-direction: row; /* Stack elements vertically */
   }
 }
 
 @media only screen and (min-width: 375px) {
   footer .content {
     font-size: .675rem; /* Reduce font size for smaller screens */
-    flex-direction: column; /* Stack elements vertically */
     padding: 0.5rem; /* Add padding to create space between elements */
   }  
 }
