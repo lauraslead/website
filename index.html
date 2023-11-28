@@ -34,7 +34,8 @@
         <ul>
           <li><a href="#about-section">About</a></li>
           <li><a href="#services-section">Services</a></li>
-          <li class="last-link"><a href="#reviews-section">Reviews</a></li>
+          <li><a href="#review-slider">Reviews</a></li>
+          <li class="last-link"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div> 
@@ -102,16 +103,16 @@
         
         <img class="service-image1" src="./resources/images/benny-downstay-1200.png" srcset="./resources/images/benny-downstay-450.jpg 450w, ./resources/images/benny-downstay-800.jpg 768w, ./resources/images/benny-downstay-1200.jpg 1200w" alt="A photo representing a dog on a solo walk"/>
         <div class="service-content1">
-          <h2>Solo walk</h2>
-          <h3>1 hour - £20</h3>
-          <h4>Ideal for dogs who are anxious, your dog gets undivided attention from Laura ensuring they get engagement and exercise. Rest assured your dog will be in good hands, receiving the attention and care they deserve.</h4>
+          <h2>1-2-1</h2>
+          <h3>1 hour - £40</h3>
+          <h4>Discover joy in dog training with our tailored 1-2-1 sessions covering everything from  behaviour modification to puppy help. Sessions are held outside or at your home. Let's create a warm and welcoming space for your beloved pet to learn and thrive.</h4>
         </div>
         <a href="https://calendly.com/laurasleaduk/meet-and-greet?a1=1" class="service-button1">Enquire now</a>
       
         <img class="service-image2" src="./resources/images/laura-layla-prancing-1200.jpg" srcset="./resources/images/laura-layla-prancing-450.jpg 450w, ./resources/images/laura-layla-prancing-800.jpg 768w, ./resources/images/laura-layla-prancing-1200.jpg 1200w" alt="A photo showing a dog being trained on a walk"/>
         <div class="service-content2">
           <h2>Walk & train</h2>
-          <h3>1 hour - £25</h3>
+          <h3>1 hour - £30</h3>
           <h4>Perfect for owners who want to continue with their own ongoing training covering basic obedience such as loose leash walking, stays, recall and other basic manners. Laura helps your dog stay well-behaved, ensuring a strong and positive bond between dog and owner.</h4>
         </div>
         <a href="https://calendly.com/laurasleaduk/meet-and-greet?a1=2" class="service-button2">Enquire now</a>
@@ -135,7 +136,7 @@
   </div>
 </div> -->
 
-<div class="review-slider">
+<div id="review-slider" class="review-slider">
   <div class="reviews">
     <div class="review">
       <h2>Alex & Lola</h2>
@@ -180,7 +181,7 @@
       }
     });
 
-    changeButtonColor();
+    maybeDisplayArrows();
   }
 
   // Call function to initialize first review
@@ -217,13 +218,11 @@
     }
   }
 
-  function changeButtonColor() {
+  function maybeDisplayArrows() {
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
     const reviews = document.querySelectorAll('.review');
     const totalReviews = reviews.length;
-
-    const buttonColor = '#495D6A'; // Desired color
 
     if (totalReviews > 1) {
       prevButton.style.display = "block";
@@ -232,20 +231,24 @@
       prevButton.style.display = "none";
       nextButton.style.display = "none";
     }
-
-    prevButton.style.color = buttonColor;
-    nextButton.style.color = buttonColor;
   }
 </script>
 
-    <!-- Footer -->
+<!-- Footer -->
 
-    <footer>
-      <div class="content">
-        <span class="copyright">© 2023  Laura's Lead, All Rights Reserved</span>
-        <span class="location">Designed in Bath</span>
-      </div>
-    </footer>
+<footer id="contact">
+  <div class="content">
+    <div class="left">
+      <span class="copyright">© 2023  Laura's Lead, All Rights Reserved</span>
+    </div>
+    <div class="center">
+      <span class="email">Contact: laurasleaduk@gmail.com</span>
+    </div>
+    <div class="right">
+      <span class="location">Designed in Bath</span>
+    </div>
+  </div>
+</footer>
 
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 

@@ -546,7 +546,7 @@ header .mobile {
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 18rem;
+  min-height: 22rem;
 }
 
 .reviews {
@@ -586,6 +586,7 @@ header .mobile {
   background: transparent;
   border: none;
   cursor: pointer;
+  color: #495D6A;
 }
 
 .prev {
@@ -615,7 +616,7 @@ header .mobile {
   }
 
   .review-slider {
-    min-height: 26rem;
+    min-height: 30rem;
   }
 
   @media only screen and (max-width: 375px) {
@@ -631,6 +632,10 @@ header .mobile {
       margin: 0 2rem;
       font-size: 1rem;
     }
+
+    .review-slider {
+      min-height: 22rem;
+    }
   }
 }
 
@@ -645,14 +650,35 @@ footer .content {
   color: #FFEFD9;
   display: flex;
   font-size: .75rem;
+  justify-content: space-between;
+  align-items: center; /* Vertically center the content */
 }
 
-footer .copyright {
-  flex-grow: 1;
+footer .left,
+footer .center,
+footer .right {
+  flex-basis: 33.33%; /* Equal width for the three sections */
+  text-align: center;
+}
+
+footer .left {
+  text-align: left; /* Align text to the left within the left section */
+}
+
+footer .right {
+  text-align: right; /* Align text to the right within the right section */
 }
 
 @media only screen and (min-width: 760px) {
   footer .content {
     font-size: .75rem;
   }
+}
+
+@media only screen and (min-width: 375px) {
+  footer .content {
+    font-size: .675rem; /* Reduce font size for smaller screens */
+    flex-direction: column; /* Stack elements vertically */
+    padding: 0.5rem; /* Add padding to create space between elements */
+  }  
 }
