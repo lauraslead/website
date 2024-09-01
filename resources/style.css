@@ -431,6 +431,7 @@ header .mobile {
   margin: 0px 10px;
   align-items: start;
   grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
   "service-image1 service-image2 service-image3"
   "service-content1 service-content2 service-content3"
